@@ -20,6 +20,8 @@ namespace LinqToXml
                         )
                 );
 
+            doc.Save(fileName: "modules.xml");
+
             Console.ReadLine();
         }
     }

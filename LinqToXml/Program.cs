@@ -11,10 +11,25 @@ namespace LinqToXml
     {
         static void Main(string[] args)
         {
-            CreateSimpleXml();
-            ReadSimpleXml();
+            //CreateSimpleXml();
+            //ReadSimpleXml();
+            QueryXml();
 
             Console.ReadLine();
+        }
+
+        private static void QueryXml()
+        {
+            XDocument doc = XDocument.Load(uri: "employees.xml");
+
+            var developers = doc.Descendants("Employee")
+                                .Where(x => x.Attribute("Type").Value == "Developer")
+                                .OrderBy(x => x.Value);
+
+            foreach (var dev in developers)
+            {
+                Console.WriteLine(dev.Value);
+            }
         }
 
         private static void ReadSimpleXml()

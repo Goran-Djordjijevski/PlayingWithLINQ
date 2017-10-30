@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.16
+VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqToXml", "LinqToXml\LinqToXml.csproj", "{F3D0EFBE-11B1-4FC0-BDA4-2FA1E2196739}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqQueries", "LinqQueries\LinqQueries.csproj", "{06234E33-8206-4136-86B5-69037AA1CF70}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +17,15 @@ Global
 		{F3D0EFBE-11B1-4FC0-BDA4-2FA1E2196739}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3D0EFBE-11B1-4FC0-BDA4-2FA1E2196739}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3D0EFBE-11B1-4FC0-BDA4-2FA1E2196739}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06234E33-8206-4136-86B5-69037AA1CF70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06234E33-8206-4136-86B5-69037AA1CF70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06234E33-8206-4136-86B5-69037AA1CF70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06234E33-8206-4136-86B5-69037AA1CF70}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9D85E187-7F54-4C8F-B7E3-D091CC8FE35B}
 	EndGlobalSection
 EndGlobal

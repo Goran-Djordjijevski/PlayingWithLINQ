@@ -46,6 +46,27 @@ namespace LinqQueries
             var studentsInDescOrder = studentListOrderBy.OrderByDescending(s => s.StudentName);
             var studentsOrderThenBy = studentListOrderBy.OrderBy(s => s.StudentName).ThenBy(s => s.Age);
 
+            // Grouping - GroupBy and ToLookup
+            IList<Student> studentListGroupBy = new List<Student>() {
+                new Student() { StudentID = 1, StudentName = "John", Age = 18 } ,
+                new Student() { StudentID = 2, StudentName = "Steve",  Age = 21 } ,
+                new Student() { StudentID = 3, StudentName = "Bill",  Age = 18 } ,
+                new Student() { StudentID = 4, StudentName = "Ram" , Age = 20 } ,
+                new Student() { StudentID = 5, StudentName = "Abram" , Age = 21 }
+            };
+
+            var groupedResult = studentListGroupBy.GroupBy(s => s.Age);
+
+            foreach (var ageGroup in groupedResult)
+            {
+                Console.WriteLine($"Age Group: {ageGroup.Key}");
+
+                foreach (var student in ageGroup)
+                {
+                    Console.WriteLine($"Student Name: {student.StudentName}");
+                }
+            }
+
             Console.ReadLine();
         }
     }

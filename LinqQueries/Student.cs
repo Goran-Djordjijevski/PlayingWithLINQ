@@ -11,5 +11,13 @@ namespace LinqQueries
         public int StudentID { get; set; }
         public string StudentName { get; set; }
         public int Age { get; set; }
+
+        public int StandardId { get; set; }
+    }
+
+    public class Standard
+    {
+        public int StandardId { get; set; }
+        public string StandardName { get; set; }
     }
 }

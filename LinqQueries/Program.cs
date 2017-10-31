@@ -67,6 +67,30 @@ namespace LinqQueries
                 }
             }
 
+            // Joining - Join and GroupJoin
+            IList<Student> studentListJoin = new List<Student>() {
+                new Student() { StudentID = 1, StudentName = "John", StandardId = 1 },
+                new Student() { StudentID = 2, StudentName = "Moin", StandardId = 1 },
+                new Student() { StudentID = 3, StudentName = "Bill", StandardId = 2 },
+                new Student() { StudentID = 4, StudentName = "Ram" , StandardId = 2 },
+                new Student() { StudentID = 5, StudentName = "Ron"  }
+            };
+
+            IList<Standard> standardList = new List<Standard>() {
+                new Standard(){ StandardId = 1, StandardName="Standard 1"},
+                new Standard(){ StandardId = 2, StandardName="Standard 2"},
+                new Standard(){ StandardId = 3, StandardName="Standard 3"}
+            };
+
+            var innerJoin = studentListJoin.Join(standardList,
+                                                 student => student.StandardId,
+                                                 standard => standard.StandardId,
+                                                 (student, standard) => new
+                                                 {
+                                                     StudentName = student.StudentName,
+                                                     StandardName = standard.StandardName
+                                                 });
+
             Console.ReadLine();
         }
     }

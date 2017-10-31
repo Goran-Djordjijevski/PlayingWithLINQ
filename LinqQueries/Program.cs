@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,7 @@ namespace LinqQueries
     {
         static void Main(string[] args)
         {
-            // Filter Where operator
+            // Filtering - Where operator
             IList<Student> studentList = new List<Student>() {
                 new Student() { StudentID = 1, StudentName = "John", Age = 18 } ,
                 new Student() { StudentID = 2, StudentName = "Steve",  Age = 15 } ,
@@ -20,6 +21,18 @@ namespace LinqQueries
             };
 
             var filteredResult = studentList.Where(s => s.Age > 12 && s.Age < 20);
+
+            // Filtering - OfType operator
+            IList mixedList = new ArrayList();
+            mixedList.Add(0);
+            mixedList.Add("One");
+            mixedList.Add("Two");
+            mixedList.Add(3);
+            mixedList.Add(new Student() { StudentID = 1, StudentName = "Bill" });
+
+            var stringResult = mixedList.OfType<string>();
+
+            // Filtering - OfType operator
 
             Console.ReadLine();
         }

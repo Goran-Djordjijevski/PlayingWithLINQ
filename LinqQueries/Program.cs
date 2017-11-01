@@ -73,7 +73,7 @@ namespace LinqQueries
                 new Student() { StudentID = 2, StudentName = "Moin", StandardId = 1 },
                 new Student() { StudentID = 3, StudentName = "Bill", StandardId = 2 },
                 new Student() { StudentID = 4, StudentName = "Ram" , StandardId = 2 },
-                new Student() { StudentID = 5, StudentName = "Ron"  }
+                new Student() { StudentID = 5, StudentName = "Ron" , StandardId = 3 }
             };
 
             IList<Standard> standardList = new List<Standard>() {

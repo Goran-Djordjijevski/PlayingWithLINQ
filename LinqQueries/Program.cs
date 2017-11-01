@@ -164,6 +164,18 @@ namespace LinqQueries
 
             double averageAge = studentList.Average(x => x.Age);
 
+            // Aggregation - Count
+            IList<Student> studentListCount = new List<Student>() {
+                new Student() { StudentID = 1, StudentName = "John", Age = 13 } ,
+                new Student() { StudentID = 2, StudentName = "Moin", Age = 21 } ,
+                new Student() { StudentID = 3, StudentName = "Bill", Age = 18 } ,
+                new Student() { StudentID = 4, StudentName = "Ram", Age = 20 } ,
+                new Student() { StudentID = 5, StudentName = "Mathew", Age = 15 }
+            };
+
+            int numOfStudents = studentListCount.Count();
+            int ageOfStudents = studentListCount.Count(x => x.Age >= 18);
+
             Console.ReadLine();
         }
     }

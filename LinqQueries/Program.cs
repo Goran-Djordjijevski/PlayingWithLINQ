@@ -150,6 +150,20 @@ namespace LinqQueries
             IList<String> strList = new List<String>() { "One", "Two", "Three", "Four", "Five" };
             var commaSeperatedString = strList.Aggregate((s1, s2) => s1 + ", " + s2);
 
+            // Aggregation - Average
+            IList<int> intListAverage = new List<int>() { 10, 20, 30 };
+            double average = intListAverage.Average();
+
+            IList<Student> studentListAverage = new List<Student> () {
+                new Student() { StudentID = 1, StudentName = "John", Age = 13 } ,
+                new Student() { StudentID = 2, StudentName = "Moin", Age = 21 } ,
+                new Student() { StudentID = 3, StudentName = "Bill", Age = 18 } ,
+                new Student() { StudentID = 4, StudentName = "Ram", Age = 20 } ,
+                new Student() { StudentID = 5, StudentName = "Ron", Age = 15 }
+            };
+
+            double averageAge = studentList.Average(x => x.Age);
+
             Console.ReadLine();
         }
     }

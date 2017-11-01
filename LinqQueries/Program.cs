@@ -124,7 +124,6 @@ namespace LinqQueries
             });
 
             // Quantifier - All, Any and Contain
-
             IList<Student> studentListAll = new List<Student>() {
                 new Student() { StudentID = 1, StudentName = "John", Age = 18 } ,
                 new Student() { StudentID = 2, StudentName = "Steve",  Age = 15 } ,
@@ -147,6 +146,9 @@ namespace LinqQueries
                 new Student() { StudentID = 5, StudentName = "Ron" , Age = 19 }
              };
 
+            // Aggregation - Aggregate
+            IList<String> strList = new List<String>() { "One", "Two", "Three", "Four", "Five" };
+            var commaSeperatedString = strList.Aggregate((s1, s2) => s1 + ", " + s2);
 
             Console.ReadLine();
         }

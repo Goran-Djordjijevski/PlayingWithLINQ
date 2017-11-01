@@ -91,6 +91,23 @@ namespace LinqQueries
                                                      StandardName = standard.StandardName
                                                  });
 
+            var groupJoin = standardList.GroupJoin(studentListJoin,
+                                                   student => student.StandardId,
+                                                   standard => standard.StandardId,
+                                                   (standard, studentsGroup) => new
+                                                   {
+                                                       Students = studentsGroup,
+                                                       StandardFullName = standard.StandardName
+                                                   });
+            
+            foreach (var item in groupJoin)
+            {
+                Console.WriteLine(item.StandardFullName);
+
+                foreach (var stud in item.Students)
+                    Console.WriteLine(stud.StudentName);
+            }
+
             Console.ReadLine();
         }
     }

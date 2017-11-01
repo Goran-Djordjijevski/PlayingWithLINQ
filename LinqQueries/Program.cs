@@ -108,6 +108,21 @@ namespace LinqQueries
                     Console.WriteLine(stud.StudentName);
             }
 
+            // Projection - Select and SelectMany
+            IList<Student> studentListProjection = new List<Student>() {
+                new Student() { StudentID = 1, StudentName = "John", Age = 13 } ,
+                new Student() { StudentID = 2, StudentName = "Moin",  Age = 21 } ,
+                new Student() { StudentID = 3, StudentName = "Bill",  Age = 18 } ,
+                new Student() { StudentID = 4, StudentName = "Ram" , Age = 20 } ,
+                new Student() { StudentID = 5, StudentName = "Ron" , Age = 15 }
+            };
+
+            var selectResult = studentListProjection.Select(s => new
+            {
+                Name = s.StudentName,
+                Age = s.Age
+            });
+
             Console.ReadLine();
         }
     }

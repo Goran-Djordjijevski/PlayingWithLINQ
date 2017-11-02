@@ -228,6 +228,12 @@ namespace LinqQueries
 
             bool isEqual = strList1.SequenceEqual(strList2);
 
+            // Concatenation - Concat
+            IList<string> collection1 = new List<string>() { "One", "Two", "Three" };
+            IList<string> collection2 = new List<string>() { "Five", "Six" };
+
+            var collection3 = collection1.Concat(collection2);
+
             Console.ReadLine();
         }
     }

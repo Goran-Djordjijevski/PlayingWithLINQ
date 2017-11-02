@@ -194,6 +194,23 @@ namespace LinqQueries
 
             // string res9 = strListElementAt.ElementAt(9); We have exception
 
+            // Element - First and FirstOrDefault
+            IList<int> intListFirst = new List<int>() { 7, 10, 21, 30, 45, 50, 87 };
+            IList<string> strListFirst = new List<string>() { null, "Two", "Three", "Four", "Five" };
+            IList<string> emptyListFirst = new List<string>();
+
+            int res10 = intListFirst.First();
+            int res11 = intListFirst.First(i => i % 2 == 0);
+
+            string res12 = strListFirst.First();
+
+            int res13 = intListFirst.FirstOrDefault();
+            int res14 = intListFirst.FirstOrDefault(i => i % 2 == 0);
+
+            string res15 = emptyListFirst.FirstOrDefault();
+
+            string res16 = strListFirst.FirstOrDefault(x => x.Contains("T"));
+
             Console.ReadLine();
         }
     }

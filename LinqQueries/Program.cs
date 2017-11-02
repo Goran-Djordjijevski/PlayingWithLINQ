@@ -209,7 +209,18 @@ namespace LinqQueries
 
             string res15 = emptyListFirst.FirstOrDefault();
 
-            string res16 = strListFirst.FirstOrDefault(x => x.Contains("T"));
+            //string res16 = strListFirst.FirstOrDefault(x => x.Contains("T")); We have exception
+
+            // Element - Single or SingleOrDefault
+            IList<int> oneElementListSingle = new List<int>() { 7 };
+            IList<int> intListSingle = new List<int>() { 7, 10, 21, 30, 45, 50, 87 };
+            IList<string> strListSingle = new List<string>() { null, "Two", "Three", "Four", "Five" };
+            IList<string> emptyListSingle = new List<string>();
+
+            int res17 = oneElementListSingle.Single();
+            int res18 = oneElementListSingle.SingleOrDefault();
+
+            string res19 = emptyListSingle.SingleOrDefault();
 
             Console.ReadLine();
         }

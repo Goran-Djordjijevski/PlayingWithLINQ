@@ -234,6 +234,11 @@ namespace LinqQueries
 
             var collection3 = collection1.Concat(collection2);
 
+            // Generation - DefaultIfEmpty
+            IList<string> emptyList = new List<string>();
+            var newList = emptyList.DefaultIfEmpty();
+            var newList2 = emptyList.DefaultIfEmpty("None");
+
             Console.ReadLine();
         }
     }

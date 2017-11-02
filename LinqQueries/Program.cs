@@ -176,6 +176,24 @@ namespace LinqQueries
             int numOfStudents = studentListCount.Count();
             int ageOfStudents = studentListCount.Count(x => x.Age >= 18);
 
+            // Element - ElementAt and ElementAtOrDefault
+            IList<int> intListElementAt = new List<int>() { 10, 21, 30, 45, 50, 87 };
+            IList<string> strListElementAt = new List<string>() { "One", "Two", null, "Four", "Five" };
+
+            int res1 = intListElementAt.ElementAt(0);
+            string res2 = strListElementAt.ElementAt(0);
+
+            int res3 = intListElementAt.ElementAt(1);
+            string res4 = strListElementAt.ElementAt(1);
+
+            int res5 = intListElementAt.ElementAtOrDefault(2);
+            string res6 = strListElementAt.ElementAtOrDefault(2);
+
+            int res7 = intListElementAt.ElementAtOrDefault(9);
+            string res8 = strListElementAt.ElementAtOrDefault(9);
+
+            // string res9 = strListElementAt.ElementAt(9); We have exception
+
             Console.ReadLine();
         }
     }

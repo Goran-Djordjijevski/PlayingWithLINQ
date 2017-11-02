@@ -239,6 +239,19 @@ namespace LinqQueries
             var newList = emptyList.DefaultIfEmpty();
             var newList2 = emptyList.DefaultIfEmpty("None");
 
+            // Generation - Distinct
+            IList<string> strListDistinct = new List<string>() { "One", "Two", "Three", "Two", "Three" };
+            IList<int> intListDistinct = new List<int>() { 1, 2, 3, 2, 4, 4, 3, 5 };
+
+            var distinct1 = strListDistinct.Distinct();
+            var distinct2 = intListDistinct.Distinct();
+
+            // Generation - Except
+            List<string> strListExcept1 = new List<string>() { "One", "Two", "Three", "Four", "Five" };
+            IList<string> strListExcept2 = new List<string>() { "Four", "Five", "Six", "Seven", "Eight" };
+
+            var except = strListExcept1.Except(strListExcept2);
+
             Console.ReadLine();
         }
     }
